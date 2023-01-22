@@ -7,37 +7,37 @@ const w = d * 7;
 const y = d * 365.25;
 
 type Unit =
-  | 'Years'
-  | 'Year'
-  | 'Yrs'
-  | 'Yr'
-  | 'Y'
-  | 'Weeks'
-  | 'Week'
-  | 'W'
-  | 'Days'
-  | 'Day'
-  | 'D'
-  | 'Hours'
-  | 'Hour'
-  | 'Hrs'
-  | 'Hr'
-  | 'H'
-  | 'Minutes'
-  | 'Minute'
-  | 'Mins'
-  | 'Min'
-  | 'M'
-  | 'Seconds'
-  | 'Second'
-  | 'Secs'
-  | 'Sec'
+  | 'år'
+  | 'år'
+  | 'år'
+  | 'år'
+  | 'å'
+  | 'veckor'
+  | 'vecka'
+  | 'v'
+  | 'dagar'
+  | 'dag'
+  | 'd'
+  | 'timmar'
+  | 'timme'
+  | 'tim'
+  | 'tim'
+  | 't'
+  | 'minuter'
+  | 'minut'
+  | 'min'
+  | 'min'
+  | 'm'
+  | 'sekunder'
+  | 'sekund'
+  | 'sek'
+  | 'sek'
   | 's'
-  | 'Milliseconds'
-  | 'Millisecond'
-  | 'Msecs'
-  | 'Msec'
-  | 'Ms';
+  | 'millisekunder'
+  | 'millisekund'
+  | 'msek'
+  | 'msek'
+  | 'ms';
 
 type UnitAnyCase = Unit | Uppercase<Unit> | Lowercase<Unit>;
 
@@ -102,28 +102,28 @@ function parse(str: string): number {
   const n = parseFloat(groups.value);
   const type = (groups.type || 'ms').toLowerCase() as Lowercase<Unit>;
   switch (type) {
-    case 'years':
-    case 'year':
+    case 'år':
+    case 'år':
     case 'yrs':
     case 'yr':
     case 'y':
       return n * y;
-    case 'weeks':
-    case 'week':
+    case 'veckor':
+    case 'vecka':
     case 'w':
       return n * w;
-    case 'days':
-    case 'day':
+    case 'dagar':
+    case 'dag':
     case 'd':
       return n * d;
-    case 'hours':
-    case 'hour':
+    case 'timmar':
+    case 'timme':
     case 'hrs':
     case 'hr':
     case 'h':
       return n * h;
-    case 'minutes':
-    case 'minute':
+    case 'minuter':
+    case 'minut':
     case 'mins':
     case 'min':
     case 'm':
@@ -134,8 +134,8 @@ function parse(str: string): number {
     case 'sec':
     case 's':
       return n * s;
-    case 'milliseconds':
-    case 'millisecond':
+    case 'millisekunder':
+    case 'millisekund':
     case 'msecs':
     case 'msec':
     case 'ms':
